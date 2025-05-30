@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Dyr objekt
+        </title>
+
+
+        <style>
+            body {
+                background-color: teal;
+                color: white;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <header>
+            <h1>
+                Lorem ipsum dolor sit amet consectetur.
+            </h1>
+        </header>
+
+
+        <main>
+            <button onclick="writeOutput()">
+                Klikk meg
+            </button>
+
+
+            <div id="output"></div>
+        </main>
+
+
+        <footer>
+            <p>dajføasjøljaøjøadf</p>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+            let mineDyr = [
+                {navn: "Millie Vanillie",
+                fodselsAar: 2020,
+                mor: "Iskrem",
+                far: "Sjokolat",
+                rase: "poodle"},
+
+                {navn: "NesteMann", 
+                fodselsAar: 2023,
+                mor: "Neste",
+                far: "Mann",
+                rase: "Australian Shepherd"},
+
+                {navn: "Brokkoli", 
+                fodselsAar: 2018,
+                mor: "Blomkål",
+                far: "Mann",
+                rase: "Shiba"},
+
+                {navn: "Lewis", 
+                fodselsAar: 2019,
+                mor: "Macaroni",
+                far: "Lex luthor",
+                rase: "Golden Retriever"},
+
+                {navn: "Blåhaj", 
+                fodselsAar: 1925,
+                mor: "Blåmamma",
+                far: "Blåfar",
+                rase: "Hai"},
+            ]
+
+
+            function writeOutput() {
+                let svar = "";
+
+
+                for(let i = 0; i < mineDyr.length; i++) {
+                    svar +=  `${mineDyr[i].navn}: <br> 
+                        <ul>
+                            <li> ble født i ${mineDyr[i].fodselsAar}. </li> 
+                            <li> sin mor heter ${mineDyr[i].mor} og faren heter ${mineDyr[i].far}. </li> 
+                            <li> er nå ${2025 - mineDyr[i].fodselsAar} år. </li>
+                        </ul>
+                    `
+                }
+
+                output.innerHTML = svar
+                console.log(output.innerhtml)
+            }
+        </script>
+    </body>
+</html>
