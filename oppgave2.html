@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Objekter i en objekt
+        </title>
+
+
+        <style>
+            body {
+                background-color: teal;
+                color: white;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <header>
+            <h1>
+                Lorem ipsum dolor sit amet consectetur.
+            </h1>
+        </header>
+
+
+        <main>
+            <button onclick="getFull()">
+                Full info
+            </button>
+
+            <button onclick="getShort()">
+                Kortere info
+            </button>
+
+
+            <div id="output"></div>
+        </main>
+
+
+        <footer>
+            <p>dajføasjøljaøjøadf</p>
+        </footer>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+
+            let ander = [
+                {
+                    fornavn: "Donald",
+                    etternavn: "Duck",
+                    adresse: "donalds vei 6",
+                    poststed: "1234",
+                    telefon: {
+                        privat: "+38 97 549 845",
+                        jobb: "+49 196 489 88",
+                    },
+                    epost: {
+                        privat: "donald@duck.no",
+                        jobb: "donald@andeby.no",
+                    }
+                },
+
+                {
+                    fornavn: "Ole",
+                    etternavn: "Duck",
+                    adresse: "ole vei 13",
+                    poststed: "2345",
+                    telefon: {
+                        privat: "+73 489 179 15",
+                        jobb: "+79 795 785 14",
+                    },
+                    epost: {
+                        privat: "ole@duck.no",
+                        jobb: "ole@andeby.no",
+                    }
+                },
+
+                {
+                    fornavn: "Dole",
+                    etternavn: "Duck",
+                    adresse: "dole vei 13",
+                    poststed: "2345",
+                    telefon: {
+                        privat: "+49 156 436 02",
+                        jobb: "+01 016 351 63",
+                    },
+                    epost: {
+                        privat: "dole@duck.no",
+                        jobb: "dole@andeby.no",
+                    }
+                },
+
+                {
+                    fornavn: "Duffan",
+                    etternavn: "Duck",
+                    adresse: "duffan vei 13",
+                    poststed: "2345",
+                    telefon: {
+                        privat: "+78 879 345 49",
+                        jobb: "+48 459 789 45",
+                    },
+                    epost: {
+                        privat: "duffan@duck.no",
+                        jobb: "duffan@andeby.no",
+                    }
+                }
+            ]
+
+
+            function getFull() {
+                let svar = "";
+
+
+                for(let i = 0; i < ander.length; i++) {
+                    svar +=  `${ander[i].fornavn} ${ander[i].etternavn}: <br> 
+                        <ul>
+                            <li> Addressen: ${ander[i].fornavn}. </li> 
+                            <li> Poststed: ${ander[i].poststed}. </li> 
+                            <li> Telefon privat: ${ander[i].telefon.privat}. </li>
+                            <li> Telefon jobb: ${ander[i].telefon.jobb}. </li>
+                            <li> Epost privat: ${ander[i].epost.privat}. </li> 
+                            <li> Epost jobb: ${ander[i].epost.jobb}. </li> 
+                        </ul>
+                    `
+                }
+
+                writeOutput(svar)
+            }
+
+
+            function getShort() { //inkluderer fornavn, etternavn, private epost og telefonnummer til jobb
+                let svar = "";
+
+                for(let i = 0; i < ander.length; i++) {
+                    svar +=  `${ander[i].fornavn} ${ander[i].etternavn}: <br> 
+                        <ul>
+                            <li> Telefon jobb: ${ander[i].telefon.jobb}. </li>
+                            <li> Epost privat: ${ander[i].epost.privat}. </li> 
+                        </ul>
+                    `
+                }
+
+                writeOutput(svar)
+            }
+
+
+            function writeOutput (x) {
+                output.innerHTML = x
+            }
+        </script>
+    </body>
+</html>
