@@ -15,6 +15,69 @@
             img {
                 height: 200px;
             }
+
+            .card_border {
+                display: flex;
+                flex-direction: column;
+
+                width: 300px;
+                min-height: 400px;
+                max-height: 600px;
+                border: 4px solid white;
+                box-shadow: 4px 4px 4px black;
+                border-radius: 16px;
+
+                background-image: linear-gradient(red , darkorchid);
+
+                font-size: 16px;
+                margin: 16px 32px;
+            }
+
+            .player_name {
+                text-align: center;
+                text-shadow: 0 0 4px black;
+                margin-bottom: none;
+            }
+            
+            .player_info {
+                display: flex;
+                width: 100%;
+                height: 100%;
+
+                justify-content: center;
+                align-items: end;
+                border-bottom: 4px solid white;
+            }
+
+            .player_flags {
+                width: 20%;
+                height: 20%;
+            }
+
+            .player_profile {
+                height: 250px;
+            }
+
+            .player_number {
+                font-size: 24px;
+                padding: 0 20px;
+            }
+
+            .role_name {
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .birth_date {
+                font-size: 14px;
+            }
+
+            .layout {
+                display: flex;
+                flex-wrap: wrap;
+                min-width: 300px;
+                max-width: 100%;
+            }
         </style>
     </head>
 
@@ -50,6 +113,11 @@
 
 
             <div id="output"></div>
+
+
+            <div class="layout" id="layout">
+                
+            </div>
         </main>
 
 
@@ -60,6 +128,7 @@
 
         <script>
             let output = document.getElementById("output");
+            let layout = document.getElementById("layout");
 
 
             let lag = [
@@ -71,7 +140,7 @@
                 Høyde: 184,
                 Nasjonalitet: "Norge",
                 Født: "07-10-1995",
-                Bilde: "images/1.png"
+                Bilde: "images/players/1.png"
             },
             {
                 Nummer: 12,
@@ -80,7 +149,7 @@
                 Etternavn: "Børsheim",
                 Nasjonalitet: "Norge",
                 Født: "18-02-2005",
-                Bilde: "images/12.png"
+                Bilde: "images/players/12.png"
             },
             {
                 Nummer: 24,
@@ -89,7 +158,7 @@
                 Etternavn: "Klausen",
                 Nasjonalitet: "Norge",
                 Født: "10-10-2007",
-                Bilde: "images/24.png"
+                Bilde: "images/players/24.png"
             },
             {
                 Nummer: 21,
@@ -98,7 +167,7 @@
                 Etternavn: "De Roeve",
                 Nasjonalitet: "Belgia",
                 Født: "10-08-2004",
-                Bilde: "images/21.png"
+                Bilde: "images/players/21.png"
             },
             {
                 Nummer: 38,
@@ -107,7 +176,7 @@
                 Etternavn: "Andersen",
                 Nasjonalitet: "Norge",
                 Født: "30-01-2005",
-                Bilde: "images/38.png"
+                Bilde: "images/players/38.png"
             },
             {
                 Nummer: 2,
@@ -116,7 +185,7 @@
                 Etternavn: "Hellan",
                 Nasjonalitet: "Norge",
                 Født: "17- 08-2003",
-                Bilde: "images/2.png"
+                Bilde: "images/players/2.png"
             },
             {
                 Nummer: 3,
@@ -125,7 +194,7 @@
                 Etternavn: "Pallesen Knudsen",
                 Nasjonalitet: "Norge",
                 Født: "30-08-1996",
-                Bilde: "images/3.png"
+                Bilde: "images/players/3.png"
             },
             {
                 Nummer: 17,
@@ -134,7 +203,7 @@
                 Etternavn: "Soltvedt",
                 Nasjonalitet: "Norge",
                 Født: "09-09-1995",
-                Bilde: "images/17.png"
+                Bilde: "images/players/17.png"
             },
             {
                 Nummer: 6,
@@ -143,7 +212,7 @@
                 Etternavn: "Sery Larsen",
                 Nasjonalitet: "Danmark",
                 Født: "10-04-2000",
-                Bilde: "images/6.png"
+                Bilde: "images/players/6.png"
             },
             {
                 Nummer: 15,
@@ -152,7 +221,7 @@
                 Etternavn: "Torsvik",
                 Nasjonalitet: "Norge",
                 Født: "24-05-2005",
-                Bilde: "images/15.png"
+                Bilde: "images/players/15.png"
             },
             {
                 Nummer: 23,
@@ -161,7 +230,7 @@
                 Etternavn: "Pedersen",
                 Nasjonalitet: "Norge",
                 Født: "11-08-1996",
-                Bilde: "images/23.png"
+                Bilde: "images/players/23.png"
             },
             {
                 Nummer: 26,
@@ -170,7 +239,7 @@
                 Etternavn: "Helland",
                 Nasjonalitet: "Norge",
                 Født: "25-04-2005",
-                Bilde: "images/26.png"
+                Bilde: "images/players/26.png"
             },
             {
                 Nummer: 43,
@@ -179,7 +248,7 @@
                 Etternavn: "Holten",
                 Nasjonalitet: "Norge",
                 Født: "20-02-2005",
-                Bilde: "images/43.png"
+                Bilde: "images/players/43.png"
             },
             {
                 Nummer: 5,
@@ -188,7 +257,7 @@
                 Etternavn: "Opsahl",
                 Nasjonalitet: "Norge",
                 Født: "17-07-1999",
-                Bilde: "images/5.png"
+                Bilde: "images/players/5.png"
             },
             {
                 Nummer: 8,
@@ -197,7 +266,7 @@
                 Etternavn: "Horn Myhre",
                 Nasjonalitet: "Norge",
                 Født: "04-03-1999",
-                Bilde: "images/8.png"
+                Bilde: "images/players/8.png"
             },
             {
                 Nummer: 10,
@@ -206,7 +275,7 @@
                 Etternavn: "Kornvig",
                 Nasjonalitet: "Norge",
                 Født: "28-04-2000",
-                Bilde: "images/10.png"
+                Bilde: "images/players/10.png"
             },
             {
                 Nummer: 14,
@@ -215,7 +284,7 @@
                 Etternavn: "Mathisen",
                 Nasjonalitet: "Norge",
                 Født: "18-01-1999",
-                Bilde: "images/14.png"
+                Bilde: "images/players/14.png"
             },
             {
                 Nummer: 19,
@@ -224,7 +293,7 @@
                 Etternavn: "Gudmundsson",
                 Nasjonalitet: "Island",
                 Født: "08-02-2004",
-                Bilde: "images/19.png"
+                Bilde: "images/players/19.png"
             },
             {
                 Nummer: 25,
@@ -233,7 +302,7 @@
                 Etternavn: "Wassberg",
                 Nasjonalitet: "Norge",
                 Født: "12-06-2004",
-                Bilde: "images/25.png"
+                Bilde: "images/players/25.png"
             },
             {
                 Nummer: 27,
@@ -242,7 +311,7 @@
                 Etternavn: "Sande",
                 Nasjonalitet: "Norge",
                 Født: "22-03-1998",
-                Bilde: "images/27.png"
+                Bilde: "images/players/27.png"
             },
             {
                 Nummer: 41,
@@ -251,7 +320,7 @@
                 Etternavn: "Remmem",
                 Nasjonalitet: "Norge",
                 Født: "18-2-2006",
-                Bilde: "images/41.png"
+                Bilde: "images/players/41.png"
             },
             {
                 Nummer: 32,
@@ -260,7 +329,7 @@
                 Etternavn: "Haaland",
                 Nasjonalitet: "Norge",
                 Født: "08-03-2005",
-                Bilde: "images/32.png"
+                Bilde: "images/players/32.png"
             },
             {
                 Nummer: 37,
@@ -269,7 +338,7 @@
                 Etternavn: "Berisha",
                 Nasjonalitet: "Norge",
                 Født: "21-01-2005",
-                Bilde: "images/37.png"
+                Bilde: "images/players/37.png"
             },
             {
                 Nummer: 7,
@@ -278,7 +347,7 @@
                 Etternavn: "Hansen",
                 Nasjonalitet: "Danmark",
                 Født: "28-07-2002",
-                Bilde: "images/7.png"
+                Bilde: "images/players/7.png"
             },
             {
                 Nummer: 9,
@@ -287,7 +356,7 @@
                 Etternavn: "Castro",
                 Nasjonalitet: "Chile",
                 Født: "08-01-1996",
-                Bilde: "images/9.png"
+                Bilde: "images/players/9.png"
             },
             {
                 Nummer: 11,
@@ -296,7 +365,7 @@
                 Etternavn: "Finne",
                 Nasjonalitet: "Norge",
                 Født: "13-02-1995",
-                Bilde: "images/11.png"
+                Bilde: "images/players/11.png"
             },
             {
                 Nummer: 20,
@@ -305,7 +374,7 @@
                 Etternavn: "Heggebø",
                 Nasjonalitet: "Norge",
                 Født: "29-07-2001",
-                Bilde: "images/20.png"
+                Bilde: "images/players/20.png"
             }
 
         ]
@@ -316,15 +385,26 @@
 
 
                 for(let i = 0; i < lag.length; i++) {
-                    svar +=  `${lag[i].Fornavn} ${lag[i].Etternavn}: <br> 
-                        <ul>
-                            <li> Posisjon: ${lag[i].Posisjon}. </li> 
-                            <li> Nummer: ${lag[i].Nummer}. </li> 
-                            <li> Nasjonalitet: ${lag[i].Nasjonalitet}. </li>
-                            <li> Fødselsdato: ${lag[i].Født}. </li>
-                            <image src="${lag[i].Bilde}" />
-                        </ul>
-                    `
+                    svar +=  `<div class="card_border">
+                                    <h1 class="player_name">
+                                        ${lag[i].Fornavn} ${lag[i].Etternavn}
+                                    </h1>
+
+                                    <div class="player_info">
+                                        <img src="images/flags/${lag[i].Nasjonalitet}.png" class="player_flags"/>
+                                        <img src="${lag[i].Bilde}" class="player_profile">
+                                        <p class="player_number">
+                                            #${lag[i].Nummer}
+                                        </p>
+                                    </div>
+
+                                    <p class="role_name">
+                                        ${lag[i].Posisjon}
+                                    </p>
+                                    <p class="birth_date">
+                                        ${lag[i].Født}
+                                    </p>
+                                </div>`
                 }
 
                 writeOutput(svar)
@@ -341,11 +421,11 @@
                     if (lag[i].Posisjon == role) {
                         svar +=  `${lag[i].Fornavn} ${lag[i].Etternavn}: <br> 
                             <ul>
+                                <image src="${lag[i].Bilde}" />
                                 <li> Posisjon: ${lag[i].Posisjon}. </li> 
                                 <li> Nummer: ${lag[i].Nummer}. </li> 
                                 <li> Nasjonalitet: ${lag[i].Nasjonalitet}. </li>
                                 <li> Fødselsdato: ${lag[i].Født}. </li>
-                                <image src="${lag[i].Bilde}" />
                             </ul>
                         `
                     }
@@ -355,9 +435,44 @@
                 writeOutput(svar)
             }
 
+            /*
+            `${lag[i].Fornavn} ${lag[i].Etternavn}: <br> 
+                        <ul>
+                            <image src="${lag[i].Bilde}" />
+                            <li> Posisjon: ${lag[i].Posisjon}. </li> 
+                            <li> Nummer: ${lag[i].Nummer}. </li> 
+                            <li> Nasjonalitet: ${lag[i].Nasjonalitet}. </li>
+                            <li> Fødselsdato: ${lag[i].Født}. </li>
+                        </ul>
+                    `
+
+                        
+
+            <div class="card_border">
+                <h1 class="player_name">
+                    Mathias Dyngeland
+                </h1>
+
+                <div class="player_info">
+                    <img src="images/Flags/Norge.png" class="player_flags"/>
+                    <img src="images/players/1.png" class="player_profile">
+                    <p class="player_number">
+                        #1
+                    </p>
+                </div>
+
+                <p class="role_name">
+                    Keeper
+                </p>
+                <p class="birth_date">
+                    07-10-1995
+                </p>
+            </div>
+            */
+
 
             function writeOutput (x) {
-                output.innerHTML = x
+                layout.innerHTML = x
             }
         </script>
     </body>
